@@ -1,7 +1,7 @@
 {
   "name": "goal-setter",
   "version": "1.0.0",
-  "description": "A simpple Goal Seter MERN Application",
+  "description": "A simple Goal Seter MERN Application",
   "main": "server.js",
   "scripts": {
     "start": "node backend/server.js",
