@@ -11,10 +11,10 @@ function Register() {
     name: '',
     email: '',
     password: '',
-    password2: '',
+    confirmPassword: '',
   })
 
-  const { name, email, password, password2 } = formData
+  const { name, email, password, confirmPassword } = formData
 
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -45,7 +45,7 @@ function Register() {
   const onSubmit = (e) => {
     e.preventDefault()
 
-    if (password !== password2) {
+    if (password !== confirmPassword) {
       toast.error('Passwords do not match')
     } else {
       const userData = {
@@ -110,9 +110,9 @@ function Register() {
             <input
               type='password'
               className='form-control'
-              id='password2'
-              name='password2'
-              value={password2}
+              id='confirmPassword'
+              name='confirmPassword'
+              value={confirmPassword}
               placeholder='Confirm password'
               onChange={onChange}
             />
