@@ -62,23 +62,37 @@ export const authSlice = createSlice({
     },
     extraReducers:(builder)=>{
         builder
-            .addCase(register.pending, (state)=>{
-                state.isLoading = true
-            })
-            .addCase(register.fulfilled, (state, actions)=>{
-                state.isLoading = false
-                state.isSuccess = true
-                state.user = actions.payload
-            })
-            .addCase(register.rejected, (state, actions)=>{
-                state.isLoading = false
-                state.isError = true
-                state.message = actions.payload
-                state.user = null
-            })
-            .addCase(logout.fulfilled, (state)=>{
-                state.user = null
-            })
+          .addCase(register.pending, (state) => {
+            state.isLoading = true;
+          })
+          .addCase(register.fulfilled, (state, actions) => {
+            state.isLoading = false;
+            state.isSuccess = true;
+            state.user = actions.payload;
+          })
+          .addCase(register.rejected, (state, actions) => {
+            state.isLoading = false;
+            state.isError = true;
+            state.message = actions.payload;
+            state.user = null;
+          })
+          .addCase(login.pending, (state) => {
+            state.isLoading = true;
+          })
+          .addCase(login.fulfilled, (state, actions) => {
+            state.isLoading = false;
+            state.isSuccess = true;
+            state.user = actions.payload;
+          })
+          .addCase(login.rejected, (state, actions) => {
+            state.isLoading = false;
+            state.isError = true;
+            state.message = actions.payload;
+            state.user = null;
+          })
+          .addCase(logout.fulfilled, (state) => {
+            state.user = null;
+          });
     }
 })
 
